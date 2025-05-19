@@ -48,17 +48,10 @@
 
 /* Navbar Logo */
 .request-navbar-logo h2 {
-  font-size: 2rem;
-  color: #0077ff;
+  font-size: 32px;
+  color: #2563eb;
   font-weight: 700;
   margin: 0;
-  position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Montserrat', sans-serif;
-  cursor: default;
-  user-select: none;
 }
 
 /* Navbar Links */
@@ -94,35 +87,18 @@
 }
 
 /* Hamburger Menu Styling */
-.request-hamburger {
+.request-menu-toggle {
   display: none;
   cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  z-index: 1100;
-}
-
-.request-hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Animate Hamburger when active */
-.request-hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.request-hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.request-hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  background: none;
+  border: none;
+  font-size: 28px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  margin-left: 0px;
 }
 
 /* Content layout below navbar */
@@ -294,22 +270,25 @@
   .request-navbar-links {
     flex-direction: column;
     position: fixed;
-    top: 60px;
+    top: 70px; 
     left: 0;
-    width: 100vw;
-    max-height: calc(100vh - 60px);
-    height: auto;
+    width: 100vw; 
     background-color: #ffffff;
-    border-top: none;
+    border-top: 1px solid #e2e8f0;
     display: none;
     animation: slideDown 0.3s ease-in-out forwards;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 1050;
-    overflow-y: auto; /* Allow vertical scroll if content exceeds max-height */
+    z-index: 999;
   }
 
   .request-navbar-links.open {
     display: flex;
+  }
+
+  .request-navbar-links .request-nav-link {
+    padding: 15px 20px;
+    width: 100%;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
   }
 
   /* Important: allow page scrolling when menu is open */
@@ -317,52 +296,28 @@
     overflow: visible;
   }
 
-  .request-hamburger {
-    display: flex;
-    align-items: center;
+  .request-menu-toggle {
+    display: block;
     position: absolute;
-    top: 2px;
-    left: 0px;
-    z-index: 1100;
-  }
-
-  /* Hamburger bars in blue */
-  .request-hamburger span {
-    background-color: #0077ff;
-    /* Blue color */
-  }
-
-  /* Animate Hamburger when active */
-  .request-hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-    background-color: #005fcc;
-    /* Darker blue for active */
-  }
-
-  .request-hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .request-hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-    background-color: #005fcc;
-    /* Darker blue for active */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
   }
 }
 
-/* --- Keep the slideDown animation from previous code --- */
+/* Slide Down Animation */
 @keyframes slideDown {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(-15px);
+    transform: translateY(-20px);
   }
 
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 
 /* Home Icon Styles */
 .home-icon-below {
