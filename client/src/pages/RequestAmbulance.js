@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import '../styles/RequestAmbulance.css';
 import mapGif from '../images/map.gif';
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function RequestAmbulance() {
   const pickupRef = useRef(null);
@@ -51,10 +52,12 @@ function RequestAmbulance() {
             </div>
 
             {/* Hamburger Icon */}
-            <div className={`request-hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-              <span className="line"></span>
-              <span className="line"></span>
-              <span className="line"></span>
+            <div className="request-menu-toggle" onClick={toggleMenu}>
+              {menuOpen ? (
+                <span className="request-close-icon">&times;</span>
+              ) : (
+                <GiHamburgerMenu size={28} color="#2563eb" />
+              )}
             </div>
           </div>
         </nav>
