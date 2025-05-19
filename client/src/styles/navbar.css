@@ -16,8 +16,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 18px;
 }
 
 /* Flex Layout */
@@ -99,7 +98,7 @@ body {
 /* Responsive: Mobile View */
 @media (max-width: 768px) {
   .home-navbar {
-    padding: 12px 20px; /* Slightly less padding on smaller screens */
+    padding: 12px 20px; 
   }
 
   .home-navbar-content {
@@ -113,6 +112,7 @@ body {
     transform: none;
     left: auto;
     margin: 0 auto;
+    z-index: 2px;
   }
 
   .home-navbar-logo h2 {
@@ -120,6 +120,7 @@ body {
     color: #2563eb;
     margin: 0;
     text-align: center;
+    z-index: 2px;
   }
 
   .home-menu-toggle {
@@ -131,13 +132,12 @@ body {
     z-index: 1001;
   }
 
-  /* ✅ Update this block */
   .home-navbar-links {
     flex-direction: column;
-    position: fixed; /* changed from absolute */
-    top: 60px; /* adjust based on your navbar height */
+    position: fixed;
+    top: 70px; 
     left: 0;
-    width: 100vw; /* full viewport width */
+    width: 100vw; 
     background-color: #ffffff;
     border-top: 1px solid #e2e8f0;
     display: none;
